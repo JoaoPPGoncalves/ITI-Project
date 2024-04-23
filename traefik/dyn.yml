@@ -1,0 +1,19 @@
+http:
+  routers:
+    pdfer:
+      rule: Host(`192.168.20.1`) && PathPrefix(`/`) #`pdfer.localhost`
+      service: pdfer
+      middlewares:
+       - "pdfer-retry"
+  services:
+    pdfer:
+      loadBalancer:
+        servers:
+          - url: http://192.168.20.1:8080
+          - url: http://192.168.20.2:8080
+          - url: http://192.168.20.3:8080
+  middlewares:
+   pdfer-retry:
+     retry:
+       attempts: 2
+       initialInterval: 100ms
