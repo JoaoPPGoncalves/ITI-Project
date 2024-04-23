@@ -1,6 +1,6 @@
 # ITI
 
-Código final para o projeto da uc de ITI
+Development project for the Information Technology Infrastructures subject of the Master's degree course in Information Systems Engineering and Management, in the first semester of 2023/2024
 
 ## Tabela de conteúdos:
 
